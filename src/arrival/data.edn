@@ -1,0 +1,63 @@
+{:id "476d1685-3de2-4bfa-bb01-64afbd0e28eb"
+ :result
+ {:learning-course-catalogue/code :be-000005/lcc-000001
+  :children
+  [{:db/id 17592186045643
+    :name "Folder 1"
+    :descr "Learning Course Folder 1"
+    :seq 1
+    :type :folder
+    :children
+    [{:db/id 17592186045648
+      :name "Folder 1.1"
+      :descr "Learning Course Folder 1.1"
+      :seq 1
+      :type :folder
+      :children
+      [{:name "Course 1"
+        :descr "Some course 1 description."
+        :seq 1
+        :ref-id 17592186045674
+        :type :course
+        :course-id 17592186045616
+        :db/id 17592186045674}]}]}
+   {:db/id 17592186045668
+    :name "Folder 2"
+    :descr "Learning Course Folder 2"
+    :seq 2
+    :type :folder}
+   {:name "Course 2"
+    :descr "Some course 2 description."
+    :seq 3
+    :ref-id 17592186045677
+    :type :course
+    :course-id 17592186045609
+    :db/id 17592186045677}]
+  :learning-course-catalogue/name "Catalog 1"
+  :learning-course-catalogue/child-learning-course-identity-refs
+  [{:db/id 17592186045677
+    :learning-course-identity-ref/seq 3
+    :learning-course-identity-ref/learning-course-identity
+    {:db/id 17592186045592
+     :learning-course-identity/active-version #:db{:id 17592186045609}
+     :learning-course/_identity
+     [{:db/id 17592186045591
+       :learning-course/version #inst "2019-11-26T11:10:40.600-00:00"
+       :learning-course/draft false}
+      {:db/id 17592186045609
+       :learning-course/version #inst "2019-11-26T11:11:27.148-00:00"
+       :learning-course/draft false}]
+     :name "Course 2"
+     :descr "Some course 2 description."}}]
+  :learning-course-catalogue/identity
+  {:db/id 17592186045639
+   :learning-course-catalogue-identity/uid #uuid "5ddd31ff-95be-45f0-a7e5-64394da95433"
+   :learning-course-catalogue-identity/active-version #:db{:id 17592186045638}}
+  :version-status :version-status/active
+  :learning-course-catalogue/uid #uuid "5ddd31ff-c114-4ded-b988-7969d7f7c9f9"
+  :learning-course-catalogue/draft false
+  :learning-course-catalogue/version #inst "2019-11-26T14:09:03.404-00:00"
+  :db/id 17592186045638
+  :learning-course-catalogue-identity/_active-version [#:db{:id 17592186045639}]
+  :learning-course-catalogue/descr "Dsecription 1"}
+ :meta {:replicated-entity-ids []}}
