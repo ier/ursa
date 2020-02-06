@@ -4,8 +4,9 @@
   (:gen-class))
 
 (defn- find-branches
-  "The function recursivly searches for the course titles in vector and returns the full parent folder path of each found course.
-   If it is something wrong with input data the function will return the empty vector."
+  "The function recursively searches for the course titles in vector and returns the full
+   parent folder path of each found course. If it is something wrong with input data 
+   the function will return the empty vector."
   [xs]
   (if (vector? xs)
     (map (fn [x]

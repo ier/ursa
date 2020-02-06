@@ -18,7 +18,7 @@
            '()))))
 
 (deftest bad-imput-1
-  (testing "Bad imput with no name key returns empty list"
+  (testing "Bad input with no name key returns empty list"
     (is (= (ac/parse-courses {:id "476d1685-3de2-4bfa-bb01-64afbd0e28eb"
                               :result
                               {:learning-course-catalogue/code :be-000005/lcc-000001
@@ -32,7 +32,7 @@
            '()))))
 
 (deftest bad-imput-2
-  (testing "Bad imput with no type key returns empty list"
+  (testing "Bad input with no type key returns empty list"
     (is (= (ac/parse-courses {:id "476d1685-3de2-4bfa-bb01-64afbd0e28eb"
                               :result
                               {:learning-course-catalogue/code :be-000005/lcc-000001
@@ -46,7 +46,7 @@
            '()))))
 
 (deftest bad-imput-3
-  (testing "Bad imput with no children key returns empty list"
+  (testing "Bad input with no children key returns empty list"
     (is (= (ac/parse-courses {:id "476d1685-3de2-4bfa-bb01-64afbd0e28eb"
                               :result
                               {:learning-course-catalogue/code :be-000005/lcc-000001
