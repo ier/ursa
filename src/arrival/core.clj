@@ -23,13 +23,14 @@
 
 (defn- decorate
   "Helps to represent separate course path parts as backslashed full path."
-  [x]
-  (let [name-part (last x)
-        path-part (take (- (count x) 1) x)
+  [data-row]
+  (let [path-part (butlast data-row)
         path (if (empty? path-part)
                "/"
-               (apply str (interpose " / " path-part)))]
-    (into {} {:course name-part :path path})))
+               (->> path-part
+                    (interpose " / " )
+                    (apply str )))]
+    (into {} {:course (last data-row) :path path})))
 
 (defn parse-courses
   "For the given hash-map with the tree-like data structure of folders and courses,
