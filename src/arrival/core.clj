@@ -9,12 +9,11 @@
    the function will return the empty vector."
   [xs]
   (if (vector? xs)
-    (map (fn [x]
-           (let [name (:name x)
-                 type (:type x)
-                 sub (find-branches (:children x))
-                 not-empty (filter some? sub)
-                 nested (map #(into [{:name name :type type}] %) not-empty)]
+    (map (fn [{:keys [name type children]}]
+           (let [nested (->> children
+                             find-branches
+                             (filter some?)
+                             (map #(into [{:name name :type type}] %)))]
              (if (seq nested)
                nested
                [{:name name :type type}])))
