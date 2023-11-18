@@ -29,7 +29,6 @@
         path (if (empty? path-part)
                "/"
                (apply str (interpose " / " path-part)))]
-
     (into {} {:course name-part :path path})))
 
 (defn parse-courses
@@ -42,13 +41,13 @@
         filtered (filter (fn [x]
                            (not (nil? (seq (filter #(= :course (:type %)) x)))))
                          flat)
-        data-rows (map (fn [x] (map #(:name %) x)) filtered)
-        result (map decorate data-rows)]
-    result))
+        data-rows (map (fn [x] (map #(:name %) x)) filtered)]
+    (map decorate data-rows)))
 
 (defn -main
   "Main application entry point."
   [& args]
-  (let [data (edn/read-string (slurp "data.edn"))
-        parse-result (parse-courses data)]
-    parse-result))
+  (->> "data.edn"
+       slurp
+       edn/read-string
+       parse-courses))
