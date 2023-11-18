@@ -50,4 +50,5 @@
   (->> "data.edn"
        slurp
        edn/read-string
-       parse-courses))
+       parse-courses
+       prn))
