@@ -37,13 +37,14 @@
    the function will return the list of hash-maps with the course title and full parent
    folders path to it. For root level courses the path will be just a backslash symbol."
   [xs]
-  (let [raw (find-branches (:children (:result xs)))
-        flat (map flatten raw)
-        filtered (filter (fn [x]
-                           (not (nil? (seq (filter #(= :course (:type %)) x)))))
-                         flat)
-        data-rows (map (fn [x] (map #(:name %) x)) filtered)]
-    (map decorate data-rows)))
+  (->> xs
+       :result
+       :children
+       find-branches
+       (map flatten)
+       (filter (fn [x] (not (nil? (seq (filter #(= :course (:type %)) x))))))
+       (map (fn [x] (map #(:name %) x)))
+       (map decorate)))
 
 (defn -main
   "Main application entry point."
